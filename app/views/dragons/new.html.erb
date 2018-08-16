@@ -1,0 +1,8 @@
+<h1>Creating Dragon</h1>
+
+<%= form_for @dragon do |f| %>
+  <p>Name:<%= f.text_field :name %></p>
+  <p>Owner: <%= f.collection_select :user_id, User.all, :id, :name %></p>
+
+  <p><%= f.submit "Create Dragon" %></p>
+  <% end %>
