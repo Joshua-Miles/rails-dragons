@@ -1,0 +1,13 @@
+
+<p>Name:<%= @employee.name%></p>
+<p><%= link_to 'Edit', edit_employee_path(@employee)%></p>
+<p>Alias:<%= @employee.alias%></p>
+<p>Title:<%= @employee.title%></p>
+<p>Office:<%= @employee.office%></p>
+<p>Dog:<%= link_to @employee.dog.name, dog_path(@employee.dog) %></p>
+
+
+
+<p>Name:<%=@user.name%></p>
+<p><%= link_to 'Edit', edit_user_path(@user)%></p>
+<p>Dragon:<%= link_to @user.dog.name, dragon_path(@user.dragon)%></p>

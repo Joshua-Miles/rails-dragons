@@ -1,0 +1,8 @@
+<h1><%=@dragon.name%></h1>
+<h1><%=@dragon.breed%></h1>
+
+<ul>
+<%=@dragon.user.each do |user|%>
+<li><%= link_to user.name, user%></li>
+<% end %>
+</ul>
