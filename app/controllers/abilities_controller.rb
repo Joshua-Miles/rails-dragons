@@ -23,7 +23,7 @@ class AbilitiesController < ApplicationController
   def create
     @ability = Ability.new(ability_params)
 
-    @ability.dragons << Dragon.find(params[:ability][:dragon_id].to_i)
+    @ability.dragons << Dragon.find(params[:ability][:dragon_id])
 
 
     if @ability.save

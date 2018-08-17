@@ -23,7 +23,7 @@ class DragonsController < ApplicationController
   def create
     # byebug
     @dragon = Dragon.new(dragon_params)
-    @dragon.abilities << Ability.find(params[:dragon][:ability_id].to_i)
+    @dragon.abilities << Ability.find(params[:dragon][:ability_id])
     # byebug
 
     if @dragon.save
