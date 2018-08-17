@@ -1,0 +1,12 @@
+<h1><%= @user.name %></h1>
+<h3><%= @user.house %></h3>
+
+<ul>
+	<% @user.dragons.each do |dragon| %>
+	<li><%= link_to dragon.name, dragon %></li>
+	<% end %>
+</ul>
+
+<%= link_to "Edit", edit_user_path(@user) %><br>
+<%= link_to "Kill", @user, method: :delete, data: { confirm: "Are you sure?" } %>
+
