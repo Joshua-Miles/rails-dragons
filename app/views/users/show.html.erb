@@ -1,13 +1,8 @@
-
-<p>Name:<%= @employee.name%></p>
-<p><%= link_to 'Edit', edit_employee_path(@employee)%></p>
-<p>Alias:<%= @employee.alias%></p>
-<p>Title:<%= @employee.title%></p>
-<p>Office:<%= @employee.office%></p>
-<p>Dog:<%= link_to @employee.dog.name, dog_path(@employee.dog) %></p>
-
-
-
-<p>Name:<%=@user.name%></p>
+<p>User Name: <%=@user.name%></p>
+<%= link_to 'Destroy User', @user, method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } %>
 <p><%= link_to 'Edit', edit_user_path(@user)%></p>
-<p>Dragon:<%= link_to @user.dog.name, dragon_path(@user.dragon)%></p>
+<%@user.dragon_list.each do |user_dragon|%>
+<%=link_to user_dragon.name, dragon_path(user_dragon)%><br>
+<% end %><br>
+<%=link_to 'Back to Users Page', users_path%><br>
+

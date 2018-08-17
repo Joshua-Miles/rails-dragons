@@ -4,8 +4,8 @@ class DragonsController < ApplicationController
     end
 
     def create
-        dragon = Dragon.new(dragon_params)
-        redirect_to dragon_path
+        dragon = Dragon.create(dragon_params)
+        redirect_to dragon_url(dragon)
     end
 
     def show
@@ -27,9 +27,15 @@ class DragonsController < ApplicationController
         redirect_to dragon_path(@dragon)
     end
 
+    def destroy
+        dragon = Dragon.find(params[:id])
+        dragon.destroy
+        redirect_to dragons_path
+    end
+
     private
 
     def dragon_params
-        params.require(:dragon).permit(:name, :breed)
+        params.require(:dragon).permit(:name, :breed, :user_id)
     end
 end

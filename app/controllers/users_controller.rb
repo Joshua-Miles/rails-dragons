@@ -4,8 +4,8 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.new(user_params)
-        redirect_to user_path
+        user = User.create(user_params)
+        redirect_to user_path(user)
     end
 
     def show
@@ -14,12 +14,10 @@ class UsersController < ApplicationController
 
     def edit
         @user = User.find(params[:id])
-        @dragon_options = Dragon.all.map { |dragon| [dragon.name, dragon.id] }
     end
 
     def new
         @user = User.new
-        @dragon_options = Dragon.all.map { |dragon| [dragon.name, dragon.id] }
     end
 
     def update
@@ -27,6 +25,13 @@ class UsersController < ApplicationController
         @user.update(user_params)
         @user.save
         redirect_to user_path(@user)
+    end
+
+
+    def destroy
+        user = User.find(params[:id])
+        user.destroy
+        redirect_to users_path
     end
 
     private

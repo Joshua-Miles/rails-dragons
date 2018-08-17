@@ -9,5 +9,10 @@
 <%= f.text_field :breed %>
 </div>
 
+<div>
+<%= f.collection_select :user_id, User.all, :id, :name %>
+</div>
+
+
 <%= f.submit%>
-<% end %>s
+<% end %>
