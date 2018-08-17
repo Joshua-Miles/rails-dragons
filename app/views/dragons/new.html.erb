@@ -1,0 +1,9 @@
+<h1>Create a new Dragon</h1>
+
+<%= form_with model: @dragon do |f| %>
+	<%= f.text_field :name, placeholder: "Name" %><br>
+	<%= f.text_field :color, placeholder: "Color" %><br>
+	<%= f.select :user_id, User.all.map { |user| [user.name, user.id] } %>
+
+	<%= f.submit %>
+<% end %>

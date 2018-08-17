@@ -1,0 +1,11 @@
+<h1><%= @dragon.name %></h1>
+
+
+<ul>
+	<li><%= @dragon.color %></li>
+	<li><%= @dragon.user_id %></li>
+</ul>
+
+<%= link_to "Edit", edit_dragon_path(@dragon) %><br>
+<%= link_to "Kill", @dragon, method: :delete, data: { confirm: "Are you sure?" } %>
+
