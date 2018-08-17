@@ -21,9 +21,8 @@ class DragonsController < ApplicationController
 
   # POST /dragons
   def create
-    # byebug
     @dragon = Dragon.new(dragon_params)
-    @dragon.abilities << Ability.find(params[:dragon][:ability_id])
+    # @dragon.abilities << Ability.find(params[:dragon][:ability_id])
     # byebug
 
     if @dragon.save
@@ -55,6 +54,6 @@ class DragonsController < ApplicationController
 
     def dragon_params
       # byebug
-      params.require(:dragon).permit(:name, :user_id)
+      params.require(:dragon).permit(:name, :user_id, ability_ids:[])
     end
 end

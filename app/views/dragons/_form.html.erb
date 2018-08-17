@@ -11,7 +11,7 @@
 
 <div class="form-group">
 <%= form.label :ability_id %>
-<%= form.select :ability_id, Ability.all.map { |ability| [ability.name, ability.id ] }, class:'form-control' %>
+<%= form.collection_check_boxes :ability_ids, Ability.all, :id, :name, class:'form-control' %>
 </div>
 <br>
 <div class="actions">
