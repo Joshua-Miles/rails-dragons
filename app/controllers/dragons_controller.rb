@@ -6,7 +6,7 @@ class DragonsController < ApplicationController
   end
 
   def new
-    @all_users = @User.all.map {|user| [user.name, user.id]}
+    @all_users = User.all.map {|user| [user.name, user.id]}
   end
 
   def create
@@ -19,11 +19,11 @@ class DragonsController < ApplicationController
   end
 
   def edit
-    @all_users = @User.all.map {|user| [user.name, user.id]}
+    
+    @all_users = User.all.map {|user| [user.name, user.id]}
   end
 
   def update
-    byebug
     @dragon = Dragon.update(dragon_params)
 
     redirect_to @dragon
@@ -46,6 +46,6 @@ class DragonsController < ApplicationController
   end
 
   def dragon_params
-    params.require(:dragon).permit(:name, :owner_id)
+    params.require(:dragon).permit(:name, :user_id)
   end
 end

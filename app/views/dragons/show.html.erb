@@ -1,13 +1,8 @@
 <%= link_to "< Return to All Users", users_path %>
 
-<h1><%= @user.name %></h1>
+<h1><%= @dragon.name %></h1>
 
-<p>Dragons:</p>
-<ul>
-  <% @user.dragons.each do |dragon| %>
-    <li><%= link_to dragon.name, dragon %></li>
-  <% end %>
-</ul>
+<p>Owner Name: <%= @dragon.user.name %></p>
 
-<%= link_to "Edit User", edit_user_path(@user) %>
-<%= button_to "Delete User", {:controller => :users, :action => "destroy", :method => :delete} %>
+<%= link_to "Edit Dragon", edit_dragon_path(@dragon) %>
+<%= button_to "Delete Dragon", {:controller => :dragons, :action => "destroy", :method => :delete} %>
