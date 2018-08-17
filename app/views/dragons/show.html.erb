@@ -1,0 +1,6 @@
+<h1><%= @dragon.name %></h1>
+<h3>Age: <%= @dragon.age %></h3>
+<h3>Color: <%= @dragon.color %></h3>
+<h3>User: <%= link_to @dragon.user.name, user_path(@dragon.user) %></h3>
+
+<%= link_to 'Remove', @dragon, method: :delete, data: { confirm: 'Are you sure?' } %>

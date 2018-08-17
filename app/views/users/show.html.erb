@@ -1,0 +1,4 @@
+<h1><%= @user.name %></h1>
+<h3>Age: <%= @user.age %></h3>
+
+<%= link_to 'Remove', @user, method: :delete, data: { confirm: 'Are you sure?' } %>

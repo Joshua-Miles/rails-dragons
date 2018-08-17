@@ -1,0 +1,6 @@
+<h3>Create a User</h3>
+<%= form_with model: @user do |form| %>
+  <%= form.text_field :name, placeholder: "Name" %>
+  <%= form.text_field :age, placeholder: "Age" %>
+  <%= form.submit %>
+<% end %>
