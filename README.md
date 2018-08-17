@@ -1,12 +1,17 @@
 # rails-dragons
 
-This is a practice project to help prepare you for the code challenge.
+This builds on yesterdays practice project and involves many-to-many associations with Rails
 
-# Deliverables:
+# Old Deliverables:
 
 * The ability to create, read, update and delete *Users*
 * The ability to create, read, update and delete *Dragons*
 * The ability to select one "master" (user) for a dragon (a user can have any number of dragons)
+
+# *New Deliverables*
+* The ability to create, read, update, and delete dragon abilities (Fire breathing, Flight, etc.)
+* The ability to add any abilities to an existing dragon
+* The ability to create a dragon with any number of abilities
 
 # Instructions:
 * Fork this repository
