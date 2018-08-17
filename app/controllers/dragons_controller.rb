@@ -8,8 +8,8 @@ class DragonsController < ApplicationController
   end
 
   def create
-    dragon = Dragon.create(dragon_params)
-    redirect_to dragon_path(dragon)
+    @dragon = Dragon.create(dragon_params)
+    redirect_to dragon_path(@dragon)
   end
 
   def show
@@ -35,7 +35,7 @@ class DragonsController < ApplicationController
   private
 
   def dragon_params
-    params.require(:dragon).permit(:name, :age, :color, :user)
+    params.require(:dragon).permit(:name, :age, :color, :user_id)
   end
-  
+
 end
