@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    byebug
     @user = User.update(user_params)
 
     redirect_to @user
@@ -28,7 +29,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.destroy(user_params)
-  end
+
+    redirect_to users_pathsd  end
 
   private
 

@@ -1,0 +1,13 @@
+<%= link_to "< Return to Dragon", @dragons %>
+
+<%= form_with model: @Dragon do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label "Owner:" %><br>
+  <%= f.select :user_id, @all_users %>
+
+  <%= f.submit %>
+
+  <br>
+
+<% end %>

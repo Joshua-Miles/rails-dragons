@@ -1,7 +1,16 @@
 <%= link_to "< Return to User", @users %>
 
-<% form_with model: @user do |f| %>
-  <%= form.text_field :name %>
-  <%= form.text_field :dragon_name %>
-  <%= form.submit %>
+<%= form_with model: @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label "Dragon(s) owned:" %><br>
+  <% @user.dragons.each do |dragon| %>
+    <%= f.check_box dragon.name %>
+    <%= f.label dragon.name %><br>
+  <% end %>
+
+  <%= f.submit %>
+
+  <br>
+  
 <% end %>

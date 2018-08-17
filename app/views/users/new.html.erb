@@ -1,0 +1,10 @@
+<%= link_to "< Return to All User", users_path %>
+
+<%= form_with model: @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.submit %>
+
+  <br>
+
+<% end %>
