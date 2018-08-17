@@ -1,0 +1,8 @@
+<h3>Edit a Dragon</h3>
+<%= form_with model: @dragon do |form| %>
+  <%= form.text_field :name, placeholder: "Name" %>
+  <%= form.text_field :age, placeholder: "Age" %>
+  <%= form.text_field :color, placeholder: "Color" %>
+  <%= form.select :user, User.all.map { |user| [ user.name ] } %>
+  <%= form.submit %>
+<% end %>
