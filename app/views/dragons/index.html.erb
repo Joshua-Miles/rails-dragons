@@ -1,0 +1,8 @@
+<h1>Display Dragons</h1>
+
+<ul>
+<% @dragons.each do |dragon| %>
+<li><%= link_to dragon.name, dragon %></li>
+<% end %>
+<%= link_to 'Create Dragon', new_dragon_path %>
+</ul>

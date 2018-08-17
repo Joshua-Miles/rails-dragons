@@ -1,0 +1,9 @@
+<h1>Dragon Name: <%=@dragon.name%></h1>
+<h1>Dragon Breed: <%=@dragon.breed%></h1>
+
+<ul>
+<%=link_to 'Edit Dragon', edit_dragon_path(@dragon)%><br>
+<%=link_to @dragon.user.name, @dragon.user%><br>
+<%=link_to 'Back to Dragon Page', dragons_path%><br>
+<%= link_to 'Destroy', @dragon, method: :delete, data: { confirm: 'Are you sure you want to delete this dragon?' } %>
+</ul>

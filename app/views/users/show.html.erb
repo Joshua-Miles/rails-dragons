@@ -1,0 +1,8 @@
+<p>User Name: <%=@user.name%></p>
+<%= link_to 'Destroy User', @user, method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } %>
+<p><%= link_to 'Edit', edit_user_path(@user)%></p>
+<%@user.dragon_list.each do |user_dragon|%>
+<%=link_to user_dragon.name, dragon_path(user_dragon)%><br>
+<% end %><br>
+<%=link_to 'Back to Users Page', users_path%><br>
+
