@@ -1,8 +1,15 @@
-<%= link_to "< Return to All User", users_path %>
+<%= link_to "< Return to All Users", users_path %>
 
 <%= form_with model: @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
+  
+  <p>Dragon Info:</p>
+  <%= f.fields_for :dragons, @user.dragons.build do |df| %>
+    <%= df.label :name %>
+    <%= df.text_field :name %><br>
+  <% end %>
+  
   <%= f.submit %>
 
   <br>

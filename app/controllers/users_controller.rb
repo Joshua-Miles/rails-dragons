@@ -21,16 +21,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    byebug
-    @user = User.update(user_params)
+    @user.update(user_params)
 
     redirect_to @user
   end
 
   def destroy
-    @user = User.destroy(user_params)
+    @user.destroy
 
-    redirect_to users_pathsd  end
+    redirect_to users_path
+  end
 
   private
 
@@ -43,6 +43,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, dragons_attributes: [[:name]])
   end
 end

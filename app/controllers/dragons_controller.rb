@@ -24,13 +24,13 @@ class DragonsController < ApplicationController
   end
 
   def update
-    @dragon = Dragon.update(dragon_params)
+    @dragon.update(dragon_params)
 
     redirect_to @dragon
   end
 
   def destroy
-    @dragon = Dragon.destroy(dragon_params)
+    @dragon.destroy
 
     redirect_to dragons_path
   end

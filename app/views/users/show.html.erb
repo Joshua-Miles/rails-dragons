@@ -10,4 +10,4 @@
 </ul>
 
 <%= link_to "Edit User", edit_user_path(@user) %>
-<%= button_to "Delete User", {:controller => :users, :action => "destroy", :method => :delete} %>
+<%= button_to "Delete User", @dragon, :method => :delete %>

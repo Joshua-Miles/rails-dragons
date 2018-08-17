@@ -1,8 +1,8 @@
-<%= link_to "< Return to All Users", users_path %>
+<%= link_to "< Return to All Dragons", dragons_path %>
 
 <h1><%= @dragon.name %></h1>
 
-<p>Owner Name: <%= @dragon.user.name %></p>
+<p>Owner Name: <%= link_to @dragon.user.name, @dragon.user %></p>
 
 <%= link_to "Edit Dragon", edit_dragon_path(@dragon) %>
-<%= button_to "Delete Dragon", {:controller => :dragons, :action => "destroy", :method => :delete} %>
+<%= button_to "Delete Dragon", @dragon, :method => :delete %>
