@@ -1,0 +1,31 @@
+<h1>Dragons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Abilities</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dragons.each do |dragon| %>
+      <tr>
+        <td><%= dragon.name %></td>
+        <td><% dragon.abilities.each do |ability|%>
+        <%= link_to ability.name, ability_path(ability)%>
+        <% end %></td>
+        <td><%= link_to dragon.user.name, user_path(dragon.user)%></td>
+        <td><%= link_to 'Show', dragon %></td>
+        <td><%= link_to 'Edit', edit_dragon_path(dragon) %></td>
+        <td><%= link_to 'Destroy', dragon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Dragon', new_dragon_path %>
