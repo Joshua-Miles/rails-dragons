@@ -1,0 +1,13 @@
+<%= link_to "< Return to All Users", users_path %>
+
+<h1><%= @user.name %></h1>
+
+<p>Dragons:</p>
+<ul>
+  <% @user.dragons.each do |dragon| %>
+    <li><%= link_to dragon.name, dragon %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit User", edit_user_path(@user) %>
+<%= link_to "Delete User", edit_user_path(@user) %>
