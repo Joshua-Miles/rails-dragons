@@ -1,0 +1,23 @@
+<h1>Dragon</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @dragon.name %>
+</p>
+
+<p>
+  <strong>Abilities:</strong>
+  <% if @dragon.abilities != [] %>
+    <% @dragon.abilities.each do |ability| %>
+      <li><%= link_to ability.name, ability_path(ability)%></li>
+    <% end %>
+  <% else %>
+    Dragon is useless.
+  <% end %>
+
+<p>
+  <strong>Owner:</strong>
+  <%= link_to @dragon.user.name, user_path(@dragon.user) %>
+</p>
+
+<%= link_to 'Edit', edit_dragon_path(@dragon) %> |
+<%= link_to 'Back', dragons_path %>
