@@ -1,0 +1,8 @@
+<h2>User: <%= link_to @user.name, edit_user_path(@user) %></h2>
+
+<p>Dragons:</p>
+  <ul>
+    <% @user.my_dragons.each do |dragon| %>
+    <li><%= link_to dragon.name, dragon_path(dragon) %></li>
+    <% end %>
+  </ul>

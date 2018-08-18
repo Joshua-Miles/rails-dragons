@@ -1,0 +1,7 @@
+<h1>Editing <%= @user.name %></h1>
+
+<%= form_for @user do |f| %>
+  <p>Name:<%= f.text_field :name %></p>
+
+  <p><%= f.submit "Submit Change" %></p>
+  <% end %>
