@@ -1,0 +1,10 @@
+<%= link_to "All Users", users_path %><span><%= link_to "All Dragons", dragons_path %>
+  
+<h1>All Dragons</h1>
+<ul>
+  <% @dragons.each do |dragon| %>
+    <li><%= link_to dragon.name, dragon %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Dragon", new_dragon_path %>
