@@ -1,0 +1,9 @@
+<h1>Create New Dragon: </h1>
+
+<div>
+<%= form_with model: Dragon.new do |form| %>
+  Name: <%= form.text_field :name %><br><br>
+  User: <%= collection_select(:dragon, :user_id, User.all, :id, :name)%><br><br>
+  <%=form.submit%>
+<% end %>
+</div>
