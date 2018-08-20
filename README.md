@@ -1,17 +1,15 @@
 # rails-dragons
 
-This builds on our past practice project and involves adding sessions to our existing application
+This builds on yesterdays practice project and involves many-to-many associations with Rails
 
 # *New Deliverables*
-* A sign in page, where a user can start a session
-* Automatically associate created dragons with the user who created them
-* Prevent the user
-* Provide error messages when an invalid form is submitted
+* The ability to create, read, update, and delete dragon abilities (Fire breathing, Flight, etc.)
+* The ability to add any abilities to an existing dragon
+* The ability to create a dragon with any number of abilities
 
 # Instructions:
-* Work in your existing local repository of the project
-    * If you don't have a working version of dragons run `git checkout Part-III` then `git pull` to get a working copy of the application up to this point
-* If you would like feedback on your implementation, commit and submit a pull request (Be sure to include "Part III" in the title of your pull request)
+* Work in your existing local repository of the project (no need to re-code what you did yesterday)
+* When you have finished all deliverables, commit again and submit a pull request
 * Slack me if you get stuck anywhere for more than 30 minutes.
 
 
