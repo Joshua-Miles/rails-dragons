@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_17_022147) do
+ActiveRecord::Schema.define(version: 2018_08_18_020703) do
+
+  create_table "abilities", force: :cascade do |t|
+    t.string "power"
+  end
+
+  create_table "dragon_abilities", force: :cascade do |t|
+    t.integer "ability_id"
+    t.integer "dragon_id"
+    t.index ["ability_id"], name: "index_dragon_abilities_on_ability_id"
+    t.index ["dragon_id"], name: "index_dragon_abilities_on_dragon_id"
+  end
 
   create_table "dragons", force: :cascade do |t|
     t.string "name"
@@ -20,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_08_17_022147) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "franchise"
   end
 
 end

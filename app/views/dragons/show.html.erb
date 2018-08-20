@@ -4,5 +4,12 @@
 
 <p>Owner Name: <%= link_to @dragon.user.name, @dragon.user %></p>
 
+<p>Abilities:</p>
+<ul>
+  <% @dragon.ability_list.each do |ability| %>
+    <li><%= link_to ability.power, ability %></li>
+  <% end %>
+</ul>
+
 <%= link_to "Edit Dragon", edit_dragon_path(@dragon) %>
 <%= button_to "Delete Dragon", @dragon, :method => :delete %>

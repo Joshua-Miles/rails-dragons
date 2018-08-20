@@ -6,24 +6,31 @@ class DragonsController < ApplicationController
   end
 
   def new
+    @all_abilities = Ability.all
     @all_users = User.all.map {|user| [user.name, user.id]}
   end
 
   def create
-    @dragon = Dragon.create(dragon_params)
+    @dragon = Dragon.new(dragon_params)
 
-    redirect_to @dragon
+    if @dragon.save
+      flash[:notice] = "Article was successfully created"
+      redirect_to @dragon
+    else
+      render :new
+    end
   end
 
   def show
   end
 
   def edit
-    
+    @all_abilities = Ability.all
     @all_users = User.all.map {|user| [user.name, user.id]}
   end
 
   def update
+    byebug
     @dragon.update(dragon_params)
 
     redirect_to @dragon
@@ -46,6 +53,6 @@ class DragonsController < ApplicationController
   end
 
   def dragon_params
-    params.require(:dragon).permit(:name, :user_id)
+    params.require(:dragon).permit(:name, :user_id, :ability_ids[[:ability_id]])
   end
 end

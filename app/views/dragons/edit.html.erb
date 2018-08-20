@@ -1,13 +1,19 @@
 <%= link_to "< Return to Dragon", @dragon %>
 
-<%= form_with model: @Dragon do |f| %>
+<%= form_with model: @dragon do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label "Owner:" %><br>
-  <%= f.select :user_id, @all_users %>
+  <%= f.select :user_id, @all_users %><br>
+
+  <br>
+  <%= f.label "Abilities:" %>
+  <%= f.collection_check_boxes :ability_ids, @all_abilities, :id, :power %>
+
+  <br>
 
   <%= f.submit %>
 
-  <br>
+
 
 <% end %>

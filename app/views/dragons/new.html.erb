@@ -1,10 +1,15 @@
-<%= link_to "< Return to Dragon", @dragons %>
+<%= link_to "< Return to Dragons", @dragons %>
 
 <%= form_with model: @dragon do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label "Owner:" %><br>
   <%= f.select :user_id, @all_users %>
+
+  <br>
+
+  <%= f.label "Abilities:" %>
+  <%= f.collection_check_boxes :ability_ids, @all_abilities, :id, :power %>
 
   <br>
 

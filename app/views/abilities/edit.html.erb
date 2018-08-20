@@ -1,0 +1,13 @@
+<%= link_to "< Return to Ability", @ability %>
+
+<%= form_with model: @Ability do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label "Owner:" %><br>
+  <%= f.select :user_id, @all_users %>
+
+  <%= f.submit %>
+
+  <br>
+
+<% end %>

@@ -1,0 +1,13 @@
+<%= link_to "< Return to All Abilities", abilities_path %>
+
+<h1><%= @ability.power %></h1>
+
+<p>Dragons with Given Ability:</p>
+<ul>
+  <% @ability.dragon_list.each do |dragon| %>
+    <li><%= link_to dragon.name, dragon %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit Ability", edit_ability_path(@ability) %>
+<%= button_to "Delete Ability", @ability, :method => :delete %>
