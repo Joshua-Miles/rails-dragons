@@ -1,0 +1,8 @@
+<h3>Edit dragon:</h3>
+
+<%= form_with model: Dragon.new do |form| %>
+  <p>Dragon Name: <%= form.text_field :name %></p><br>
+  <p>Number of Flames: <%= form.text_field :flames %></p><br>
+  <p>User: <%= form.text_field :user %></p><br>
+  <p><%= form.submit %></p>
+<% end %>
