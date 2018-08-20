@@ -4,10 +4,6 @@
         <%= form.text_field :name %>
     </div>
     <div>
-        <label>Master:</label>
-        <%= form.collection_select :user_id, @users, :id, :name %>
-    </div>
-    <div>
         <label>Abilities:</label>
         <%= form.collection_check_boxes :ability_ids, @abilities, :id, :name %>
     </div>

@@ -7,6 +7,7 @@ class DragonsController < ApplicationController
 
   def create
     dragon = Dragon.new(dragon_params)
+    dragon.user = @logged_in_user
     if dragon.valid?
       dragon.save
       redirect_to dragon

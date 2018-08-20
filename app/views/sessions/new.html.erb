@@ -1,0 +1,5 @@
+<h1>Sign In</h1>
+<%= form_with url: sessions_path do | form |%>
+    <%= form.text_field :name%>
+    <%= form.submit "Sign In"%>
+<% end %>
