@@ -1,0 +1,5 @@
+<h3>Dragons:</h3>
+
+<% Dragon.all.each do |dragon| %>
+<p><%= link_to dragon.name + ' -- Number of flames: ' + dragon.flames.to_s, dragon %></p>
+<% end %>

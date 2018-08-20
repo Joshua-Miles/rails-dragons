@@ -1,0 +1,5 @@
+<h3>Users:</h3>
+
+<% User.all.each do |user| %>
+<p><%= link_to user.first_name + ' ' + user.last_name, user %></p>
+<% end %>
