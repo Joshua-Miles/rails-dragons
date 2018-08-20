@@ -5,7 +5,7 @@ This builds on our past practice project and involves adding sessions to our exi
 # *New Deliverables*
 * A sign in page, where a user can start a session
 * Automatically associate created dragons with the user who created them
-* Prevent the
+* Prevent the user from creating a dragon with an empty name
 * Provide error messages when an invalid form is submitted
 
 # Instructions:
