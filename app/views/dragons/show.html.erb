@@ -1,8 +1,15 @@
 <h1><%= @dragon.name %></h1>
-<h3> Users: </h3>
+<h3> User: </h3>
 <ul>
   <%= link_to @dragon.user.name, user_path(@dragon.user_id) %><br><br>
+</ul>
+
+<h3> Abilities: </h3>
+<ul>
+  <% @dragon.abilities.each do |ability| %>
+    <li><%= ability.name %></li>
+  <% end %><br>
+</ul>
 
   <%= button_to 'Edit this Dragon?', edit_dragon_path, method: :get %><br>
   <%= button_to 'Destroy this Dragon?', @dragon, method: :delete, data: { confirm: 'Are you sure?' } %>
-</ul>

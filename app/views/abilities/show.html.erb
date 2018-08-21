@@ -1,0 +1,10 @@
+<h1><%= @ability.name %></h1>
+
+<h3> Dragons: </h3>
+<ul>
+  <% @ability.dragons.each do |dragon| %>
+    <li><%= link_to dragon.name, dragon_path(dragon) %></li>
+  <% end %>
+</ul><br>
+
+<%= button_to 'Delete this ability?', ability_path(@ability), method: :delete, data: {confirm: 'Are you sure?'} %><br>

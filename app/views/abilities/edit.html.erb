@@ -1,0 +1,10 @@
+<h1>Edit Ability</h1>
+
+<div>
+<%= form_with model: @ability do |form| %>
+  Name: <%= form.text_field :name %><br><br>
+  Dragon: <%= form.collection_check_boxes(:dragon_ids, Dragon.all, :id, :name)%><br><br>
+  
+  <%=form.submit%>
+<% end %>
+</div>

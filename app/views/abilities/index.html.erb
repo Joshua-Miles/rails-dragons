@@ -1,0 +1,6 @@
+<h1>Dragon Abilities</h1>
+<ul>
+  <% @abilities.each do |ability| %>
+    <li><%= link_to ability.name, ability_path(ability) %></li>
+  <% end %>
+</ul>

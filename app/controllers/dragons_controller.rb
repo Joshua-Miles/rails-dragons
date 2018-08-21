@@ -37,7 +37,7 @@ class DragonsController < ApplicationController
   private
 
   def dragon_params
-    params.require(:dragon).permit(:name,:user_id)
+    params.require(:dragon).permit(:name,:user_id, ability_ids:[])
   end
 
 end
