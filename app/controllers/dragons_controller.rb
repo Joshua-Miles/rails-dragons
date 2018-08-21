@@ -12,7 +12,8 @@ class DragonsController < ApplicationController
       dragon.save
       redirect_to dragon
     else
-      # TODO: Handle user error
+      flash[:notice] = dragon.errors.full_messages.join(', ')
+      redirect_to new_dragon_path
     end
   end
 
